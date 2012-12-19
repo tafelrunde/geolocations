@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Geolocation</title>
+</head>
+
+<body>
+
+<button onclick="getit()">Get location</button>
+
+<p id="geolocation"></p>
+	<script>
+		
+		var x=""
+		
+		if(!navigator.geolocation) {
+			alert('Your Browser does not support geoloctions. Sorry.');	
+		}
+		
+			else{
+			navigator.geolocation.getCurrentPosition(success, error);	
+		}
+		
+		
+		
+		function success (position){
+			var lat = position.coords.latitude;
+			var lng = position.coords.longitude;
+		}
+		
+		function error (error) {
+			alert('Sorry, there was an error, ' +error);
+		}
+		
+		function getit()	{
+		var x = lat + lng
+		;
+		document.getElementById("geolocation").innerHTML=x;
+		}
+	</script>
+
+
+
+</body>
+</html>
